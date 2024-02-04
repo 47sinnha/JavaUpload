@@ -1,8 +1,12 @@
+require('dotenv').config(); 
 const mongoose=require("mongoose");
 const bcrypt =require("bcryptjs"); 
 const jwt = require("jsonwebtoken")
 
-mongoose.connect("mongodb://localhost:27017/Final", {
+const mongoURI = process.env.MONGODB_URI;
+
+
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
