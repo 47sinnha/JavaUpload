@@ -1,24 +1,14 @@
-require('dotenv').config(); 
+
 const mongoose=require("mongoose");
 const bcrypt =require("bcryptjs"); 
 const jwt = require("jsonwebtoken")
 
-const mongoURI = process.env.MONGODB_URI;
+//puuted my mongodburl in env file 
+const Schema = mongoose.Schema; 
 
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
 
-.then(()=>{
-    console.log("mongodb connected");
-})
-.catch(()=>{
-    console.log("failed to connect");
-})
-
-const signInschema=new mongoose.Schema({
+const signInschema=new Schema({
     email:{
         type:String,
         required:true
@@ -30,7 +20,7 @@ const signInschema=new mongoose.Schema({
     }
 })
 
-const signUpSchema= new mongoose.Schema({
+const signUpSchema= new Schema({
     email:{
         type:String,
         required:true

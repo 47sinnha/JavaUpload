@@ -10,6 +10,12 @@ const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
 const {auth, checkAuth, redirectIfLoggedIn} = require("./app");
+const mongoose = require('mongoose'); 
+
+
+
+
+
 
 
 //setting views 
@@ -26,6 +32,25 @@ app.use(express.json());
 app.set("view engine", "hbs");
 app.set("views", templatePath); 
 app.use(express.urlencoded({extended:false})); 
+
+
+mongoose.set('strictQuery', false);
+const connectDB = async () => {
+    try {
+        const uri = process.env.MONGO_URI;
+        if (!uri) {
+            console.error("MongoDB URI is not defined in environment variables.");
+            process.exit(1);
+        }
+
+        const conn = await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+        console.error(error);
+        process.exit(1);
+    }
+};
+
 
 
 //creating token for cookies
@@ -240,7 +265,9 @@ app.post("/home", async(req, res)=>{
 
 
 
+connectDB().then(()=>{
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
-  });  
+    app.listen(5000, () => {
+        console.log("Server running on port 5000");
+    });  
+}); 
