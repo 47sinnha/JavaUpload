@@ -1035,9 +1035,11 @@
                 <span id="blur" style="filter: blur(2.9px); font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 18px; color: white; margin-top: 15px; display: block; position: relative; top: 180px;">
                     Thank you for considering this platform as your guide. Together, let's embark on a journey to master DSA and overcome any challenges that come our way! 🔥
                 </span>
-                <a href="http://localhost:5000/secret">
+                <form action="/secret" method="get">
+                <a href="#">
                 <button id="PortFolio"  class="PortFolio"   style="background-color: #4CAF50; color: white; padding: 10px 30px; font-size: 16px; border: none; border-radius: 5px; margin-top: 220px; cursor: pointer; justify-content: center; align-items: center;" >Explore My PortFolio</button>
                 </a>
+                </form>
                 </div>
             </div>
         </div>
@@ -1078,6 +1080,15 @@
     </div>
     
     <script>
+        function redirectToPortfolio() {
+    // Replace "/your-portfolio-url" with the actual URL or relative path to your portfolio page
+    window.location.href = "tempelates\secret.hbs";
+  }
+
+
+
+
+
         function hide(){
           document.getElementById("me4").style.display="none";
         }
