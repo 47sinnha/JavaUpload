@@ -21,9 +21,9 @@
        width: 1200px;
        text-align: center;
        /* border: 1px solid lightgray; */
-       margin: 10px auto;
-       padding-left: 90px;
-       padding-right: 40px;
+       margin: 0px auto;
+       padding-left: 0.9px;
+       padding-right: 0.9px;
        /* background-color: rgb(239,241,243); */
    }
    
@@ -377,6 +377,13 @@
    .About-Me:hover{
      box-shadow: 0 0 10px rgba(41, 255, 48, 0.7);
    }
+
+   .imgg{
+    display: none;
+   }
+
+
+   
 }
 
 
@@ -399,9 +406,9 @@
        /* width: 1200px; */
        text-align: center;
        /* border: 1px solid lightgray; */
-       margin: 10px auto;
-       padding-left: 90px;
-       padding-right: 40px;
+       margin: 0px auto;
+       padding-left: 0.9px;
+       padding-right: 0.9px;
        /* background-color: rgb(239,241,243); */
    }
    
@@ -432,6 +439,7 @@
     /* border-bottom: 1px solid lightgray; */
     flex-wrap: wrap;
     flex-direction: row;
+    
     /* flex-direction: column; */
 }
    
@@ -557,10 +565,10 @@
    
    
    .dropdown {
-     position: relative;
-     display: inline-block;
-     box-sizing: border-box;
-   }
+  position: relative;
+}
+
+
    
    /* Style for the dropdown button */
    .dropdown-button {
@@ -576,17 +584,15 @@
    }
    
    /* Style for the dropdown content */
-   .dropdown-content {
-     display: none;
-     position: absolute;
-     background: rgb(0, 0, 0); /* Transparent black background */
-     backdrop-filter: blur(50px); /* Blurring effect */
-     min-width: 160px;
-     top: 100%;
-     left: 0px;
-     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-     z-index: 1;
-   }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Adjust this value */
+  left: 0; /* Adjust this value */
+  z-index: 1;
+}
+
    
    /* Style for the dropdown items */
    .dropdown-item {
@@ -594,7 +600,7 @@
      padding: 12px 16px;
      display: block;
      cursor: pointer;
-     color: white;
+     color: black;
    }
    
    /* Change color on hover for dropdown items */
@@ -737,12 +743,16 @@
    }
    
    .izam{
-     color: white;
+     color: rgb(0, 0, 0);
      text-decoration: none;
      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
      display: block;
      padding: 0px;
+     font-size: 20px;
+     margin-top: -5px;
    }
+
+   
    
    .izm-1:hover{
      background-color: rgb(81, 55, 153);
@@ -751,19 +761,122 @@
    .About-Me:hover{
      box-shadow: 0 0 10px rgba(41, 255, 48, 0.7);
    }
+   #me1{
+    display: none;
+   }
+   #me2{
+    display: none;
+   }
+   .imgg{
+    cursor: pointer;
+   }
+  .extra{
+      background-color: rgba(5, 5, 5, 0.1); 
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+    height: 50vh;
+    margin: 0px;
+    position: absolute;
+    font-size: 30px;
+    top: 0;
+    z-index: 100;
+    width: 34%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+  }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+     /* Set the desired color */
+    /* Set the desired border */
+    cursor: pointer;
+}
+
+
+.extra .dropdown{
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.extra .dropdown-content {
+     display: block;
+     position: absolute;
+    
    
+      border: none;
+     min-width: 160px;
+     top: 100%;
+     left: 0px;
+     
+     z-index: 1;
+   }
    
+   /* Style for the dropdown items */
+.extra   .dropdown-item {
+     text-decoration: none;
+     padding: 8px 8px;
+     display: block;
+     cursor: pointer;
+     background-color: transparent;
+     font-size: 20px;
+   }
+   
+   /* Change color on hover for dropdown items */
+.extra .dropdown-item:hover {
+     background: lightseagreen;
+     backdrop-filter: blur(50px);
+     border-radius: 10px;
+   }
+
+
+.extra .dropdownone{
+  position: absolute;
+  top: 250px;
+  left: 60px;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+}   
+
+
+
+
+
+@media(max-width:892px){
+  .extra{
+    width: 97%;
+  }
+}
+
+
+
+
 }
 </style>
 </head>
 <body>
     <div class="mainc">
         <div class="navbar">
+            <div class="imgg" id="me3" onclick="onClickMenu()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+            </div>
+
             <div class="image">
                 <img src="/images/javaholic_Logo.png" alt="" style="border-radius: 50%;">
             </div>
             <!-- <h2 class="Home" style="cursor: pointer;">JavαHolic</h2>   -->
-            <div class="dropdown">
+            <div class="dropdown" id="me1">
             <input type="button" class="dropdown-button"  value="DSA SOLUTION" style="border: none ; background: none; cursor: pointer;">
             <div class="dropdown-content">
                 <a class="dropdown-item" href="#">ARRAY</a>
@@ -771,7 +884,7 @@
                 <a class="dropdown-item" href="#">HASHMAP</a>
             </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" id="me2">
                 <input type="button" class="dropdown-button"  value="Contact Us"  style="border: none; background: none; cursor: pointer;">
                 <div class="dropdown-content">
                     <div class="izm-0" style="display: flex; height: 25px; padding: 9px;">
@@ -788,7 +901,7 @@
             <div class="dropdown">  
             <input type="button" class="USER" value="" >
             <div class="dropdown-content">
-                <a class="dropdown-item" href="/logout">LogOut</a>
+                <a style="background-color: black; color:white"   class="dropdown-item" href="/logout">LogOut</a>
             </div>
             </div>
 
@@ -929,8 +1042,59 @@
             </div>
         </div>
     </div>
+
+    <div class="extra" id="me4">
+         <div class="close-button" onclick="hide()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg>
+        </div>
+
+            <div class="dropdown">
+            <input type="button" class="dropdown-button"  value="DSA SOLUTION" style="border: none ; background: none; cursor: pointer;">
+            <div class="dropdown-content">
+                <a class="dropdown-item" href="#">ARRAY</a>
+                <a class="dropdown-item" href="#">STRING</a>
+                <a class="dropdown-item" href="#">HASHMAP</a>
+            </div>
+            </div>
+
+
+            <div class="dropdownone">
+                <input type="button" class="dropdown-button"  value="Contact Us"  style="border: none; background: none; cursor: pointer;">
+                <div class="dropdown-content">
+                    <div class="izm-0" style="display: flex; height: 25px; padding: 9px;">
+                        <img src="/images/toppng.com-ew-instagram-logo-transparent-related-keywords-logo-instagram-vector-2017-515x515.png" alt="">
+                        <a class="izam"  style="padding: 2px;"  href="https://www.instagram.com/javaholic_01?igsh=M3JtdXN0OGRsYjI4" target="_blank">INSTAGRAM</a>
+                    </div>
+                    <div class="izm-1" style="display: flex; height: 20px; padding: 9px;">
+                        <img src="/images/Gmail_Logo_512px.png" alt="" srcset="">
+                    <a class="izam"  style="padding: 2px;"    href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=javaholicnoreply@gmail.com" target="_blank">EMAIL</a>
+                    </div>
+                </div>
+   
+
+    </div>
     
     <script>
+        function hide(){
+          document.getElementById("me4").style.display="none";
+        }
+
+        function onClickMenu(){
+          if(document.getElementById("me4").style.display==="block"){
+              return  document.getElementById("me4").style.display="none";
+          }
+          else{
+            document.getElementById("me4").style.display="block"; 
+          }
+        }
+
+        hide(); 
+
+
+
         function disarrangeWords() {
     // Get the h3 element
     const h3Element = document.querySelector('.dance');
