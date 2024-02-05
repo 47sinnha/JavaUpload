@@ -437,9 +437,7 @@
    
    .subc{
        /* width: 1200px; */
-       text-align: center;
-       /* border: 1px solid lightgray; */
-       margin: 0px auto;
+       
        padding-left: 0.9px;
        padding-right: 0.9px;
        /* background-color: rgb(239,241,243); */
@@ -470,6 +468,8 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     /* border-bottom: 1px solid lightgray; */
+    flex-wrap: wrap;
+    flex-direction: row;
   
     
     /* flex-direction: column; */
@@ -732,10 +732,13 @@
     border: 0.3px solid rgb(255, 255, 255);
     border-radius: 50px;
     justify-content: space-evenly; 
-    width: 90px;
+    max-width: 90px;
+    min-width: 90px;
   }
 
-  
+  .image img{
+    display: flex;
+  }
   
   
   .img img{
