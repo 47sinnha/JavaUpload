@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HomePage-JAVAHOLIC</title>
     <style>
-      * {
-    
-    -moz-box-sizing: border-box; /* For Firefox */
-}
 
 
 
@@ -59,7 +55,7 @@
      /* border: 1px solid lightgray; */
      padding: 1px;
      margin-top: 15px;
-     justify-content: space-between;
+     justify-content: space-around;
      align-items: center;
      position: sticky;
      top: 0px;
@@ -67,6 +63,8 @@
      border-bottom-left-radius: 50px;
      border-top-right-radius: 10px;
      border-bottom-right-radius:10px;
+     flex-wrap: wrap;
+     flex-direction: row;
      /* padding-left: 90px;
      padding-right: 90px; */
      /* border-bottom: 1px solid lightgray;  */
@@ -335,7 +333,14 @@
   /* Use the same background color as .navbar */
      border: 0.3px solid rgb(255, 255, 255);
      border-radius: 50px;
+     width: 90px;
+     justify-content: space-evenly; 
    }
+
+   .image img{
+    display: flex;
+   }
+
    
    .img img{
     position: absolute;
@@ -399,6 +404,15 @@
 
    
 }
+
+@media(max-width:1500px){
+    .imgg{
+      display: flex;
+    }
+}
+
+
+
 
 
 
@@ -719,6 +733,12 @@
    /* Use the same background color as .navbar */
     border: 0.3px solid rgb(255, 255, 255);
     border-radius: 50px;
+    justify-content: space-evenly; 
+    width: 90px;
+  }
+
+  .image img{
+    display: flex;
   }
   
   
