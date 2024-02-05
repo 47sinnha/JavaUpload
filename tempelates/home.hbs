@@ -437,7 +437,9 @@
    
    .subc{
        /* width: 1200px; */
-       
+       text-align: center;
+       /* border: 1px solid lightgray; */
+       margin: 0px auto;
        padding-left: 0.9px;
        padding-right: 0.9px;
        /* background-color: rgb(239,241,243); */
@@ -730,14 +732,15 @@
     display: flex;
    /* Use the same background color as .navbar */
     border: 0.3px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    justify-content: space-evenly; 
-    max-width: 90px;
-    min-width: 90px;
+    border-radius: 50px; 
+    width: 90px;
   }
 
   .image img{
-    display: flex;
+  display: block; /* or inline-block based on your design needs */
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%; 
   }
   
   
