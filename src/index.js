@@ -27,6 +27,8 @@ const templatePath =path.join(__dirname, '../tempelates');
 app.use(cookieParser()); 
 app.use('/images', express.static('images'));
 app.use('/imagess', express.static('imagess')); 
+app.use('/questionArraysImages', express.static('questionArraysImages')); 
+app.use('/SolutionArrayImages', express.static('SolutionArrayImages')); 
 // app.use(redirectIfLoggedIn); 
 app.use(express.json());
 app.set("view engine", "hbs");
@@ -92,11 +94,21 @@ const mailGenerator = new Mailgen({
 app.get("/", redirectIfLoggedIn,(req,res) => {
     res.render("intro");
 });
+
+
 //In below i have created a cookie geting code in which system check whether the person trying to going on another page is logined or not by verfiying token 
 app.get("/secret",auth,(req, res)=>{
     // console.log(`this is the cookie awesome ${req.cookies.jwt}`);
     res.render("secret");
 }); 
+
+app.get('/array',auth, (req, res) =>{
+    res.render('array');
+  });
+
+app.get('/arraysolution', auth, (req, res)=>{
+    res.render('arrays'); 
+})  
 
 app.get("/logout", auth, async(req, res)=>{
     try{
